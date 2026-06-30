@@ -1,12 +1,19 @@
-   Repositorio del equipo 10
-   -------------------------
+# Team 10 Repository
 
-Los códigos e información se encuentran dentro de la carpeta aosciada al problema, DetectionLeaks.
+This repository contains the code and documentation developed by Team 10 for the assigned challenge.
 
-Problema asignado: Early detection of leaks in drinking water PIPELINES
+All relevant files and information can be found in the folder associated with the problem:
 
-## Integrantes de equipo:
-- Arturo García Zurita 
+**DetectionLeaks**
+
+## Problem Statement
+
+**Early detection of leaks in drinking water pipelines**
+
+The objective of this project is to develop an approach for detecting potential leaks in water distribution systems using optimization and computational methods.
+
+## Team Members
+
+- Arturo García Zurita
 - Angel Rodrigo Quintal Vega
 - Raúl Sánchez Grande
-
