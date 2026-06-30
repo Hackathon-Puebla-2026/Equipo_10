@@ -73,17 +73,20 @@ H(x)= - \alpha \sum_i S_{i} x_i + \beta \sum_{i,j}R_{ij}x_ix_j + \gamma \sum_i x
 $$
 
 where each term corrsponds to different penalties, the term with the weight $\alpha$
+
 $$
 H_{leak} = - \alpha \sum_i S_{i} x_i 
 $$
 
-reduces the energy if a sensor exists in the node, the term $S_i$ is the sensitivity of find a sensor, calculates by 
+reduces the energy if a sensor exists in the node, the term $S_i$ is the sensitivity of find a sensor, calculates by
+
 $$
 S_i = | H_i^0 - \frac{1}{l} \sum_n H_i^l|
 $$
 where $H_i^0$ is nominal pressure in the node $i$ and $H_i^l$ is the pressure in the node $i$ and test $l$.
 
 In the other hand, the term 
+
 $$
 H_{redundancy} = \beta \sum_{i,j}R_{ij}x_ix_j,
 $$
@@ -95,6 +98,7 @@ R_{ij} = \text{cov}(\Delta P_i, \Delta P_j) - \text{diag}(\text{cov}(\Delta P_i,
 $$
 
 Finally, the term with the weight $\gamma$ create a penalty for use of more sensors, 
+
 $$
 H_{sensor penalty} = \gamma \sum_i x_i.
 $$
