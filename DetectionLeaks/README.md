@@ -109,9 +109,9 @@ $$
 
 The QUBO problem is mapped into an Ising Hamiltonian with the QUBO formulation
 
-\[
+$$
 H=\sum_i h_i Z_i+\sum_{i,j}J_{ij}Z_iZ_j
-\]
+$$
 
 Then QAOA is used to approximate the minimum energy state.
 
