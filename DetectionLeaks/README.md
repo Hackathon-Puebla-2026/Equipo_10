@@ -38,19 +38,19 @@ The QUBO model is basis of the penalty and favorece in each termn
 
 Variables:
 
-\[
+$$
 x_i =
 \begin{cases}
 1 & \text{if decision is colocate a sensor in the node i}\\
 0 & \text{otherwise}
 \end{cases}
-\]
+$$
 
 The objective function is:
 
-\[
+$$
 H(x)= - \alpha \sum_i S_{i} x_i + \beta \sum_{i,j}R_{ij}x_ix_j + \gamma \sum_i x_i, 
-\]
+$$
 
 where each term corrsponds to differents penalties, the term
 \[
