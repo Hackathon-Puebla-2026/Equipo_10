@@ -49,6 +49,7 @@ The covariance matrix is a square matrix giving the covariance between each pair
 The main idea is to place sensors in regions where pressure variations are more distinguishable, improving the ability to identify anomalies caused by leaks while reducing the number of required sensors.
 
 This approach provides an initial estimation of the optimal sensor distribution before applying the QUBO formulation and QAOA optimization methods.
+
 ---
 
 ## QUBO Model
