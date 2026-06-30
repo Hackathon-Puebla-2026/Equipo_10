@@ -1,4 +1,4 @@
-# Early detection of leaks in drinking water PIPELINES using QUBO + QAOA Optimization Project
+## Early Detection of Leaks in Drinking Water Pipelines Using QUBO and QAOA
 
 ## Overview
 
@@ -17,9 +17,28 @@ Objective:
 
 - Optimize Economic Cost: Minimize the total number of installed sensors required to achieve full network coverage.
 
-- Demonstrate Quantum Advantage: Map the classical combinatorial bottleneck into a QUBO formulation, proving that Quantum Annealing can solve infrastructure optimization problems faster and more efficiently than classical brute-force methods.
+- Investigate the potential of quantum optimization methods for infrastructure optimization problems
 
 ---
+
+## Dataset and Simulation
+
+The pressure response of the hydraulic network is obtained from simulated leak scenarios. Each scenario generates pressure variations at different nodes, which are used to estimate sensor sensitivity and correlation between measurement locations.
+
+The dataset is represented as a pressure variation matrix:
+
+$$
+\Delta P =
+\begin{bmatrix}
+\Delta P_1^1 & \Delta P_2^1 & ...\\
+\Delta P_1^2 & \Delta P_2^2 & ...\\
+\vdots
+\end{bmatrix}
+$$
+
+where rows correspond to leak scenarios and columns correspond to network nodes.
+
+--
 
 ## Initial Approach: Sensor Placement Using Covariance Matrix Analysis
 
@@ -34,15 +53,15 @@ This approach provides an initial estimation of the optimal sensor distribution 
 
 ## QUBO Model
 
-The QUBO model is basis of the penalty and favorece in each termn 
+The QUBO model is basis of the penalty and favors in each term
 
 Variables:
 
 $$
 x_i =
 \begin{cases}
-1,  & \text{if decision is colocate a sensor in the node i}\\
-0,  & \text{otherwise}
+1, & \text{if a sensor is placed at node } i\\
+0, & \text{otherwise}
 \end{cases}
 $$
 
@@ -52,12 +71,12 @@ $$
 H(x)= - \alpha \sum_i S_{i} x_i + \beta \sum_{i,j}R_{ij}x_ix_j + \gamma \sum_i x_i, 
 $$
 
-where each term corrsponds to differents penalties, the term with the weight $\alpha$
+where each term corrsponds to different penalties, the term with the weight $\alpha$
 $$
 H_{leak} = - \alpha \sum_i S_{i} x_i 
 $$
 
-reduces the energy if exist a sensor in the node, the term $S_i$ is the sensitivity of find a sensor, calculates by 
+reduces the energy if a sensor exists in the node, the term $S_i$ is the sensitivity of find a sensor, calculates by 
 $$
 S_i = | H_i^0 - \frac{1}{l} \sum_n H_i^l|
 $$
@@ -65,13 +84,13 @@ where $H_i^0$ is nominal pressure in the node $i$ and $H_i^l$ is the pressure in
 
 In the other hand, the term 
 $$
-H_{redundance} = \beta \sum_{i,j}R_{ij}x_ix_j,
+H_{redundancy} = \beta \sum_{i,j}R_{ij}x_ix_j,
 $$
 
-have the information about the redundance of the system. In this term $\beta$ is weight and the term the matrix of reduncance is calculates by 
+have the information about the redundancy of the system. In this term $\beta$ is weight and the term the matrix of reduncance is calculated by 
 
 $$
-R_{ij} = Cov(x, x) - I
+R_{ij} = \text{cov}(\Delta P_i, \Delta P_j) - \text{diag}(\text{cov}(\Delta P_i, \Delta P_j))
 $$
 
 Finally, the term with the weight $\gamma$ create a penalty for use of more sensors, 
@@ -92,3 +111,7 @@ H=\sum_i h_i Z_i+\sum_{i,j}J_{ij}Z_iZ_j
 Then QAOA is used to approximate the minimum energy state.
 
 ---
+
+## Results
+
+
