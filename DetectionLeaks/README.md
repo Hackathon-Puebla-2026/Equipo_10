@@ -41,8 +41,8 @@ Variables:
 $$
 x_i =
 \begin{cases}
-1 & \text{if decision is colocate a sensor in the node i}\\
-0 & \text{otherwise}
+1,  & \text{if decision is colocate a sensor in the node i}\\
+0,  & \text{otherwise}
 \end{cases}
 $$
 
@@ -52,22 +52,38 @@ $$
 H(x)= - \alpha \sum_i S_{i} x_i + \beta \sum_{i,j}R_{ij}x_ix_j + \gamma \sum_i x_i, 
 $$
 
-where each term corrsponds to differents penalties, the term
-\[
+where each term corrsponds to differents penalties, the term with the weight $\alpha$
+$$
 H_{leak} = - \alpha \sum_i S_{i} x_i 
-\]
+$$
 
-reduces the energy if exist a sensor in the node, the term S_i is the sensitivity of find a sensor, calculates by 
-\[
-S_i = | H_i^0|
-\]
+reduces the energy if exist a sensor in the node, the term $S_i$ is the sensitivity of find a sensor, calculates by 
+$$
+S_i = | H_i^0 - \frac{1}{l} \sum_n H_i^l|
+$$
+where $H_i^0$ is nominal pressure in the node $i$ and $H_i^l$ is the pressure in the node $i$ and test $l$.
 
+In the other hand, the term 
+$$
+H_{redundance} = \beta \sum_{i,j}R_{ij}x_ix_j,
+$$
+
+have the information about the redundance of the system. In this term $\beta$ is weight and the term the matrix of reduncance is calculates by 
+
+$$
+R_{ij} = Cov(x, x) - I
+$$
+
+Finally, the term with the weight $\gamma$ create a penalty for use of more sensors, 
+$$
+H_{sensor penalty} = \gamma \sum_i x_i.
+$$
 
 ---
 
 ## Quantum Approach
 
-The QUBO problem is mapped into an Ising Hamiltonian:
+The QUBO problem is mapped into an Ising Hamiltonian with the QUBO formulation
 
 \[
 H=\sum_i h_i Z_i+\sum_{i,j}J_{ij}Z_iZ_j
@@ -76,10 +92,3 @@ H=\sum_i h_i Z_i+\sum_{i,j}J_{ij}Z_iZ_j
 Then QAOA is used to approximate the minimum energy state.
 
 ---
-
-## Future Work
-
-- Test on real quantum hardware
-- Increase problem size
-- Compare against classical optimization methods
-- Improve noise robustness
