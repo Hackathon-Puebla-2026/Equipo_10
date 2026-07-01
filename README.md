@@ -34,7 +34,7 @@ This is a **combinatorial optimization problem** — a natural fit for quantum c
 
 The dataset consists of pressure readings at 4 network nodes under nominal conditions and simulated leak scenarios. For each node, we compute the **pressure drop** with respect to the nominal value:
 
-$$\Delta p_i = |p_i^\text{leaj} - p_i^\text{nom}|$$
+$$\Delta p_i = |p_i^\text{lead} - p_i^\text{nom}|$$
 
 ### 2. Covariance-Based Redundancy Matrix
 
