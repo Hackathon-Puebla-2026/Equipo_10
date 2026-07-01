@@ -34,7 +34,7 @@ This is a **combinatorial optimization problem** — a natural fit for quantum c
 
 The dataset consists of pressure readings at 4 network nodes under nominal conditions and simulated leak scenarios. For each node, we compute the **pressure drop** with respect to the nominal value:
 
-$$\Delta p_i = p_i - p_{\text{nom},i}$$
+$$\Delta p_i = \abs{p_i - p_{\text{nom},i}}$$
 
 ### 2. Covariance-Based Redundancy Matrix
 
@@ -95,7 +95,7 @@ Equipo_10/
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 ```bash
 pip install qiskit qiskit-optimization qiskit-algorithms qiskit-aer
@@ -104,7 +104,7 @@ pip install pylatexenc numpy pandas matplotlib scipy
 
 ---
 
-## 🚀 Usage
+## Usage
 
 Open and run `Leaks.ipynb` sequentially. The notebook is divided into:
 
