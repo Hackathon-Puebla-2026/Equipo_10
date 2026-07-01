@@ -46,7 +46,7 @@ A PCA analysis confirms that most hydraulic information is concentrated in **two
 
 ### 3. Energy / Cost Function (QUBO)
 
-We minimize the following energy function to find the optimal binary sensor configuration $x \in { 0,1 }^n$:
+We minimize the following energy function to find the optimal binary sensor configuration $x \in\{ 0,1 \}^n$:
 
 $$E(x) = -\alpha \sum_i s_i x_i + \gamma \sum_i x_i + \sum_{i,j} R_{ij} x_i x_j$$
 
