@@ -34,7 +34,7 @@ This is a **combinatorial optimization problem** — a natural fit for quantum c
 
 The dataset consists of pressure readings at 4 network nodes under nominal conditions and simulated leak scenarios. For each node, we compute the **pressure drop** with respect to the nominal value:
 
-$$\Delta p_i = |p_i - p_{\text{nom},i}|$$
+$$\Delta p_i = |p_i^\text{leaj} - p_i^\text{nom}|$$
 
 ### 2. Covariance-Based Redundancy Matrix
 
@@ -46,7 +46,7 @@ A PCA analysis confirms that most hydraulic information is concentrated in **two
 
 ### 3. Energy / Cost Function (QUBO)
 
-We minimize the following energy function to find the optimal binary sensor configuration $x \in \left\{ 0,1 \right\}^n$:
+We minimize the following energy function to find the optimal binary sensor configuration $x \in { 0,1 }^n$:
 
 $$E(x) = -\alpha \sum_i s_i x_i + \gamma \sum_i x_i + \sum_{i,j} R_{ij} x_i x_j$$
 
