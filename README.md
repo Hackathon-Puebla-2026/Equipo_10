@@ -1,4 +1,4 @@
-# 💧 Early Detection of Leaks in Drinking Water Pipelines
+# Early Detection of Leaks in Drinking Water Pipelines
 
 **QAOAmigos — Team 10 | OQI Hackathon LATAM 2026**
 
@@ -6,7 +6,7 @@
 
 ---
 
-## 👥 Team Members
+## Team Members
 
 | Name | Institution | Contact |
 |---|---|---|
@@ -16,7 +16,7 @@
 
 ---
 
-## 🧩 Problem Statement
+## Problem Statement
 
 Nearly **40% of drinking water** is lost globally due to undetected pipeline leaks. This not only reduces the effective availability of drinking water, but also increases operational costs and intensifies pressure on limited freshwater resources — directly undermining **UN SDG 6: Clean Water and Sanitation**.
 
@@ -28,7 +28,7 @@ This is a **combinatorial optimization problem** — a natural fit for quantum c
 
 ---
 
-## 🔬 Approach
+## Approach
 
 ### 1. Data & Pressure Modeling
 
@@ -77,7 +77,7 @@ A **grid search** over hyperparameters $(\alpha, \gamma)$ benchmarks QAOA perfor
 
 ---
 
-## 📊 Key Result
+## Key Result
 
 > **QAOA ≈ QUBO** — Both methods converge to the same optimal sensor configuration, consistent with the PCA dimensional analysis. This validates the quantum approach on a small-scale instance.
 
@@ -85,7 +85,7 @@ For $n = 4$ nodes, classical solvers are naturally faster. The value of this wor
 
 ---
 
-## 🗂️ Repository Structure
+## Repository Structure
 
 ```
 Equipo_10/
@@ -115,7 +115,7 @@ Open and run `Leaks.ipynb` sequentially. The notebook is divided into:
 
 ---
 
-## 📚 References
+## References
 
 1. United Nations. *Sustainable Development Goal 6: Clean Water and Sanitation.*
 2. World Health Organization (WHO). *Global Water Report, 2024.*
@@ -126,6 +126,6 @@ Open and run `Leaks.ipynb` sequentially. The notebook is divided into:
 
 ---
 
-## 📄 License
+## License
 
 This project was developed for the **OQI Hackathon LATAM 2026** at BUAP. Academic and non-commercial use permitted with attribution.
